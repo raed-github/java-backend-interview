@@ -52,14 +52,14 @@ public class Main {
 	 * @return
 	 */
 	public static List<File> findFile(File[][] data, Predicate<File> predicate) {
-		List<File> appendFile = new ArrayList<File>();
+		List<File> files = new ArrayList<File>();
 		int row = data.length;
 		int col = data[0].length;
 		// Matrix First Half
 		for (int i = 0; i < col; ++i) {
 			for (int j = i; j >= 0 && i - j < row; --j) {
 				if (fileExists(data[i - j][j], predicate)) {
-					appendFile.add(data[i - j][j]);
+					files.add(data[i - j][j]);
 				}
 			}
 		}
@@ -67,11 +67,11 @@ public class Main {
 		for (int i = 1; i < row; ++i) {
 			for (int j = col - 1, k = i; j >= 0 && k < row; --j, k++) {
 				if (fileExists(data[k][j], predicate)) {
-					appendFile.add(data[k][j]);
+					files.add(data[k][j]);
 				}
 			}
 		}
-		return appendFile;
+		return files;
 	}
 
 	/**
