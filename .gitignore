@@ -1,0 +1,26 @@
+.metadata
+target/
+bin/
+!.mvn/wrapper/maven-wrapper.jar
+
+*.tmp
+
+target
+bin
+
+# intellij and eclipse files
+*.iml
+.idea
+.settings
+.project
+.classpath
+*.orig
+*.pyc
+.m2/
+appData/
+
+# netbeans files
+dependency-reduced-pom.xml
+nb-configuration.xml
+nbactions-dev.xml
+nbactions.xml
